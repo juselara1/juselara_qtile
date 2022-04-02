@@ -1,0 +1,56 @@
+[defaults]
+groups_range = [1, 9]
+n_screens = 2
+wallpaper = "~/.config/qtile/wallpaper.png"
+wallpaper_mode = "fill"
+time_format = "%I:%M %p"
+
+[keys]
+    [keys.switch]
+    left = ["mod4", "h"]
+    right = ["mod4", "l"]
+    up = ["mod4", "k"]
+    down = ["mod4", "j"]
+    next = ["mod4", "space"]
+
+    [keys.move]
+    shuffle_left = ["mod4", "shift", "h"]
+    shuffle_right = ["mod4", "shift", "l"]
+    shuffle_up = ["mod4", "shift", "k"]
+    shuffle_down = ["mod4", "shift", "j"]
+
+    [keys.resize]
+    grow_left = ["mod4", "control", "h"]
+    grow_right = ["mod4", "control", "l"]
+    grow_up = ["mod4", "control", "k"]
+    grow_down = ["mod4", "control", "j"]
+
+    [keys.utils]
+    normalize = ["mod4", "n"]
+    maximize = ["mod4", "m"]
+    next_screen = ["mod4", "w"]
+    quit = ["mod4", "q"]
+
+    [keys.custom]
+    kitty = ["mod4", "Return"]
+    rofi = ["mod4", "r"]
+
+    [keys.stop]
+    restart = ["mod4", "control", "r"]
+    shutdown = ["mod4", "control", "q"]
+
+[font]
+    font = "helvetica"
+    fontsize = 15
+
+[spacing]
+    margin = 4
+    border_width = 2
+    padding = 5
+
+[colors]
+    color0 = "#111111"
+    color1 = "#6790EB"
+    color2 = "#AAAAAA"
+    color3 = "#FFFFFF"
+
