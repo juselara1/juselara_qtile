@@ -48,8 +48,9 @@ time_format = "%I:%M %p"
     key8 = ["mod4", "shift", "8 "]
 
     [keys.custom]
-    kitty = ["mod4", "Return"]
-    rofi = ["mod4", "r"]
+    kitty = ["mod4", "Return", "kitty"]
+    rofi_window = ["mod4", "r", "rofi -show window"]
+    rofi_run = ["mod4", "c", "rofi -show run"]
 
     [keys.stop]
     restart = ["mod4", "control", "r"]

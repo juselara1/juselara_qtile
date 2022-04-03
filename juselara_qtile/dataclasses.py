@@ -41,7 +41,8 @@ class KeyUtils(BaseModel):
 
 class KeyCustom(BaseModel):
     kitty: List[str]
-    rofi: List[str]
+    rofi_window: List[str]
+    rofi_run: List[str]
 
 class KeyStop(BaseModel):
     restart: List[str]

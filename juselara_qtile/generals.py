@@ -16,7 +16,7 @@ def load_layouts(config: PathsConfig) -> List:
                 margin=config.spacing.margin,
                 border_width=config.spacing.border_width,
                 border_focus=config.colors.color0,
-                border_normal=config.colors.color2
+                border_normal=config.colors.color1
                 )
             ]
 
@@ -65,16 +65,16 @@ def create_screens(config: PathsConfig) -> List:
                             margin=config.spacing.margin,
                             ),
                         widget.MemoryGraph(
-                            border_color=config.colors.color2,
-                            graph_color=config.colors.color2,
+                            border_color=config.colors.color1,
+                            graph_color=config.colors.color1,
                             ),
                         widget.Image(
                             filename=config.defaults.cpu,
                             margin=config.spacing.margin,
                             ),
                         widget.CPUGraph(
-                            border_color=config.colors.color2,
-                            graph_color=config.colors.color2,
+                            border_color=config.colors.color1,
+                            graph_color=config.colors.color1,
                             ),
                         widget.Sep(
                             linewidth=config.spacing.line_width,
@@ -82,7 +82,7 @@ def create_screens(config: PathsConfig) -> List:
                             ),
                         widget.Clock(
                             format=config.defaults.time_format,
-                            foreground=config.colors.color2,
+                            foreground=config.colors.color1,
                             padding=config.spacing.padding,
                             font=config.font.font,
                             fontsize=config.font.fontsize

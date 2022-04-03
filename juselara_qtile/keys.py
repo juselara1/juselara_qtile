@@ -53,7 +53,7 @@ class UtilsKeyLoader(KeyLoaderImpl):
     funcs = {
             "normalize": lazy.layout.normalize,
             "maximize": lazy.layout.maximize,
-            "next_screen": lazy.screen.next,
+            "next_screen": lazy.next_screen,
             "kill": lazy.window.kill,
             "toggle_floating": lazy.window.toggle_floating,
             "fullscreen": lazy.window.toggle_fullscreen,
@@ -70,7 +70,7 @@ class UtilsKeyLoader(KeyLoaderImpl):
 
 class CustomKeyLoader(KeyLoaderImpl):
     def load(self, kind: str, keys: List[str]):
-        func = lazy.spawn(kind)
+        func = lazy.spawn(keys[2])
         self.keys.append(Key([keys[0]], keys[1], func))
 
 class KeyManager:
