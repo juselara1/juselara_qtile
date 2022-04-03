@@ -1,8 +1,7 @@
 from pydantic import BaseModel, PositiveInt
-from typing import List
+from typing import List, Optional
 
 class Defaults(BaseModel):
-    groups_range: List[PositiveInt]
     n_screens: PositiveInt
     wallpaper: str
     wallpaper_mode: str
@@ -41,6 +40,18 @@ class KeyStop(BaseModel):
     restart: List[str]
     shutdown: List[str]
 
+class KeyGroups(BaseModel):
+    key1: Optional[List[str]]
+    key2: Optional[List[str]]
+    key3: Optional[List[str]]
+    key4: Optional[List[str]]
+    key5: Optional[List[str]]
+    key6: Optional[List[str]]
+    key7: Optional[List[str]]
+    key8: Optional[List[str]]
+    key9: Optional[List[str]]
+    key0: Optional[List[str]]
+
 class Keys(BaseModel):
     switch: KeySwitch
     move: KeyMove
@@ -48,6 +59,7 @@ class Keys(BaseModel):
     utils: KeyUtils
     custom: KeyCustom
     stop: KeyStop
+    keygroups: KeyGroups
 
 class Font(BaseModel):
     font: str
@@ -63,6 +75,7 @@ class Colors(BaseModel):
     color1: str
     color2: str
     color3: str
+    color4: str
 
 class PathsConfig(BaseModel):
     defaults: Defaults

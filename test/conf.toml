@@ -1,5 +1,4 @@
 [defaults]
-groups_range = [1, 9]
 n_screens = 2
 wallpaper = "~/.config/qtile/wallpaper.png"
 wallpaper_mode = "fill"
@@ -30,6 +29,17 @@ time_format = "%I:%M %p"
     maximize = ["mod4", "m"]
     next_screen = ["mod4", "w"]
     quit = ["mod4", "q"]
+    toggle_floating = ["mod4", "f"]
+
+    [keys.keygroups]
+    key1 = ["mod4", "shift", ""]
+    key2 = ["mod4", "shift", ""]
+    key3 = ["mod4", "shift", ""]
+    key4 = ["mod4", "shift", ""]
+    key5 = ["mod4", "shift", ""]
+    key6 = ["mod4", "shift", ""]
+    key7 = ["mod4", "shift", ""]
+    key8 = ["mod4", "shift", ""]
 
     [keys.custom]
     kitty = ["mod4", "Return"]
@@ -51,6 +61,6 @@ time_format = "%I:%M %p"
 [colors]
     color0 = "#111111"
     color1 = "#6790EB"
-    color2 = "#AAAAAA"
-    color3 = "#FFFFFF"
-
+    color2 = "#777777"
+    color3 = "#AAAAAA"
+    color4 = "#FFFFFF"
