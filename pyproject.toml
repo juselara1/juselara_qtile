@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "juselara_qtile"
-version = "0.1.0"
+version = "0.1.1"
 description = "My setup for the Qtile window manager"
 authors = ["Juan Lara <julara@unal.edu.co>"]
 license = "MIT"

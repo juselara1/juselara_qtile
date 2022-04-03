@@ -125,9 +125,17 @@ class GroupManager:
         return self.output_keys
 
 class MouseKeyLoader(KeyLoaderImpl):
+    funcs = {
+            "set_position_floating": [
+                lazy.window.set_position_floating, lazy.window.get_position
+                ],
+            "set_size_floating": [
+                lazy.window.set_size_floating, lazy.window.get_size
+                ]
+            }
     def load(self, kind: str, keys: List[str]):
-        func = eval(f"lazy.window.{kind}")
-        self.keys.append(Drag([keys[0]], keys[1], func()))
+        func = self.funcs[kind]
+        self.keys.append(Drag([keys[0]], keys[1], func[0](), start=func[1]()))
 
 class MouseManager:
     def __init__(self, input_keys: Keys):
