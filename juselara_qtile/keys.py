@@ -151,5 +151,5 @@ class MouseManager:
 
     def __call__(self) -> List[Callback]:
         self.output_keys = []
-        self.load_keys(self.input_keys)
+        self.load_keys(self.input_keys.keymouse)
         return self.output_keys

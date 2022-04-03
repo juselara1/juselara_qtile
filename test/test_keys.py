@@ -1,6 +1,6 @@
 from yacmmal import autoconfig, BaseModel
-from libqtile.config import Key
-from juselara_qtile.keys import KeyManager, GroupManager
+from libqtile.config import Key, Drag
+from juselara_qtile.keys import KeyManager, GroupManager, MouseManager
 from juselara_qtile.dataclasses import PathsConfig
 from juselara_qtile.generals import load_groups
 
@@ -31,3 +31,15 @@ def test_groups(cfg):
     assert(isinstance(keys2, list))
     for key in keys2:
         assert(isinstance(key, Key))
+
+@autoconfig(
+        base_path="test/",
+        config=[( "conf", "paths", PathsConfig)],
+        format="toml"
+        )
+def test_mouse(cfg):
+    mousemanager = MouseManager(cfg.paths.keys)
+    mouse = mousemanager()
+    assert(isinstance(mouse, list))
+    for key in mouse:
+        assert(isinstance(key, Drag))
