@@ -55,7 +55,7 @@ class UtilsKeyLoader(KeyLoaderImpl):
             "maximize": lazy.layout.maximize,
             "next_screen": lazy.screen.next,
             "kill": lazy.window.kill,
-            "floating": lazy.window.toggle_floating,
+            "toggle_floating": lazy.window.toggle_floating,
             "fullscreen": lazy.window.toggle_fullscreen,
             "next_window": lazy.group.next_window,
             "prev_window": lazy.group.prev_window,
@@ -130,4 +130,18 @@ class MouseKeyLoader(KeyLoaderImpl):
         self.keys.append(Drag([keys[0]], keys[1], func()))
 
 class MouseManager:
-    ...
+    def __init__(self, input_keys: Keys):
+        self.input_keys = input_keys
+        self.output_keys: List[Callback] = []
+
+    def load_keys(self, keys: BaseModel):
+        loader = MouseKeyLoader()
+        for kind in keys.dict().keys():
+            element = getattr(keys, kind)
+            loader.load(kind, element)
+        self.output_keys.extend(loader.extract())
+
+    def __call__(self) -> List[Callback]:
+        self.output_keys = []
+        self.load_keys(self.input_keys)
+        return self.output_keys

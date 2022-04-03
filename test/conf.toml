@@ -1,6 +1,8 @@
 [defaults]
 n_screens = 2
-wallpaper = "~/.config/qtile/wallpaper.png"
+wallpaper = "~/.config/qtile/img/wallpaper.png"
+ram = "~/.config/qtile/img/ram.png"
+cpu = "~/.config/qtile/img/cpu.png"
 wallpaper_mode = "fill"
 time_format = "%I:%M %p"
 
@@ -28,8 +30,12 @@ time_format = "%I:%M %p"
     normalize = ["mod4", "n"]
     maximize = ["mod4", "m"]
     next_screen = ["mod4", "w"]
-    quit = ["mod4", "q"]
-    toggle_floating = ["mod4", "f"]
+    kill = ["mod4", "q"]
+    quit = ["mod4", "z"]
+    toggle_floating = ["mod4", "."]
+    fullscreen = ["mod4", "f"]
+    next_window = ["mod4", "d"]
+    prev_window = ["mod4", "i"]
 
     [keys.keygroups]
     key1 = ["mod4", "shift", ""]
@@ -49,6 +55,10 @@ time_format = "%I:%M %p"
     restart = ["mod4", "control", "r"]
     shutdown = ["mod4", "control", "q"]
 
+    [keys.keymouse]
+    set_position_floating = ["mod4", "Mouse1"]
+    set_size_floating = ["mod4", "Mouse2"]
+
 [font]
     font = "helvetica"
     fontsize = 15
@@ -56,7 +66,9 @@ time_format = "%I:%M %p"
 [spacing]
     margin = 4
     border_width = 2
+    line_width = 0
     padding = 5
+    bar_size = 30
 
 [colors]
     color0 = "#111111"
@@ -64,3 +76,4 @@ time_format = "%I:%M %p"
     color2 = "#777777"
     color3 = "#AAAAAA"
     color4 = "#FFFFFF"
+    color5 = "#222222"

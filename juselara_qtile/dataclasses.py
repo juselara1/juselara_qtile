@@ -4,6 +4,8 @@ from typing import List, Optional
 class Defaults(BaseModel):
     n_screens: PositiveInt
     wallpaper: str
+    ram: str
+    cpu: str
     wallpaper_mode: str
     time_format: str
 
@@ -30,7 +32,12 @@ class KeyUtils(BaseModel):
     normalize: List[str]
     maximize: List[str]
     next_screen: List[str]
+    kill: List[str]
     quit: List[str]
+    toggle_floating: List[str]
+    fullscreen: List[str]
+    next_window: List[str]
+    prev_window: List[str]
 
 class KeyCustom(BaseModel):
     kitty: List[str]
@@ -52,6 +59,10 @@ class KeyGroups(BaseModel):
     key9: Optional[List[str]]
     key0: Optional[List[str]]
 
+class KeyMouse(BaseModel):
+    set_position_floating: List[str]
+    set_size_floating: List[str]
+
 class Keys(BaseModel):
     switch: KeySwitch
     move: KeyMove
@@ -60,6 +71,7 @@ class Keys(BaseModel):
     custom: KeyCustom
     stop: KeyStop
     keygroups: KeyGroups
+    keymouse: KeyMouse
 
 class Font(BaseModel):
     font: str
@@ -68,7 +80,9 @@ class Font(BaseModel):
 class Spacing(BaseModel):
     margin: PositiveInt
     border_width: PositiveInt
+    line_width: int
     padding: PositiveInt
+    bar_size: PositiveInt
 
 class Colors(BaseModel):
     color0: str
@@ -76,6 +90,7 @@ class Colors(BaseModel):
     color2: str
     color3: str
     color4: str
+    color5: str
 
 class PathsConfig(BaseModel):
     defaults: Defaults
