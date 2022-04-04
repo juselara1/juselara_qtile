@@ -49,8 +49,9 @@ time_format = "%I:%M %p"
 
     [keys.custom]
     kitty = ["mod4", "Return", "kitty"]
-    rofi_window = ["mod4", "r", "rofi -show window"]
-    rofi_run = ["mod4", "c", "rofi -show run"]
+    window_selector = ["mod4", "r", "rofi -show window"]
+    window_launch = ["mod4", "c", "rofi -show run"]
+    screenshot = ["mod", "s", "`flameshot &` && flameshot gui"]
 
     [keys.stop]
     restart = ["mod4", "control", "r"]

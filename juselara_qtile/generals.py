@@ -1,4 +1,4 @@
-from libqtile.config import Group, Screen, Match
+from libqtile.config import Group, Screen
 from libqtile import layout, bar, widget
 from juselara_qtile.dataclasses import Keys, PathsConfig 
 from typing import List, Dict
@@ -15,8 +15,8 @@ def load_layouts(config: PathsConfig) -> List:
             layout.Columns(
                 margin=config.spacing.margin,
                 border_width=config.spacing.border_width,
-                border_focus=config.colors.color0,
-                border_normal=config.colors.color1
+                border_focus=config.colors.color1,
+                border_normal=config.colors.color3
                 )
             ]
 
