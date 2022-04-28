@@ -60,17 +60,23 @@ def create_screens(config: PathsConfig) -> List:
                             fontsize=config.font.fontsize
                             ),
                         widget.Spacer(),
-                        widget.Image(
-                            filename=config.defaults.ram,
-                            margin=config.spacing.margin,
+                        widget.TextBox(
+                            text=config.defaults.ram,
+                            font=config.font.font,
+                            fontsize=config.font.fontsize,
+                            foreground=config.colors.color1,
+                            padding=config.spacing.padding,
                             ),
                         widget.MemoryGraph(
                             border_color=config.colors.color1,
                             graph_color=config.colors.color1,
                             ),
-                        widget.Image(
-                            filename=config.defaults.cpu,
-                            margin=config.spacing.margin,
+                        widget.TextBox(
+                            text="💻",
+                            font=config.defaults.cpu,
+                            fontsize=config.font.fontsize,
+                            foreground=config.colors.color1,
+                            padding=config.spacing.padding,
                             ),
                         widget.CPUGraph(
                             border_color=config.colors.color1,
