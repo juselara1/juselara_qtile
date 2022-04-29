@@ -70,6 +70,7 @@ def create_screens(config: PathsConfig) -> List:
                         widget.MemoryGraph(
                             border_color=config.colors.color1,
                             graph_color=config.colors.color1,
+                            fill_color=config.colors.color1
                             ),
                         widget.TextBox(
                             text="💻",
@@ -81,6 +82,7 @@ def create_screens(config: PathsConfig) -> List:
                         widget.CPUGraph(
                             border_color=config.colors.color1,
                             graph_color=config.colors.color1,
+                            fill_color=config.colors.color1
                             ),
                         widget.Sep(
                             linewidth=config.spacing.line_width,
